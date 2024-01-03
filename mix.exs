@@ -8,11 +8,19 @@ defmodule PropOddsAPI.Mixfile do
       elixir: "~> 1.14",
       build_embedded: Mix.env() == :prod,
       start_permanent: Mix.env() == :prod,
+      name: "PropOddsApi",
       package: package(),
       description: """
        The Prop Odds API allows you to query player and game prop odds from different bookies.
       """,
-      deps: deps()
+      authors: ["Christopher (gk-per)"],
+      source_url: "https://github.com/gk-per/prop_odds_api",
+      deps: deps(),
+      docs: [
+        main: "readme",
+        source_ref: "main",
+        extras: ["README.md", "CHANGELOG.md", "LICENSE"]
+      ]
     ]
   end
 
@@ -42,10 +50,13 @@ defmodule PropOddsAPI.Mixfile do
     ]
   end
 
-   defp package do
-      [
-        name: "prop_odds_api",
-        files: ~w(.formatter.exs config lib mix.exs README* LICENSE*),
-      ]
+  defp package do
+    [
+      name: "prop_odds_api",
+      files: ~w(.formatter.exs config lib mix.exs README* LICENSE* CHANGELOG*),
+      links: %{"GitHub" => "https://github.com/gk-per/prop_odds_api"},
+      licenses: ["MIT"],
+      maintainers: ["Christopher (gk-per)"]
+    ]
   end
 end
