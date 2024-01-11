@@ -1,7 +1,26 @@
 defmodule PropOddsAPI.Api.Markets do
+  @moduledoc """
+  This module provides functionality to interact with markets data from the PropOdds API.
+  """
   alias PropOddsAPI.Connection
   import PropOddsAPI.RequestBuilder
 
+  @doc """
+  Retrieves market information for a specific game by its ID.
+
+  ## Parameters
+
+  - `connection`: The `Tesla.Env.client()` used to make the HTTP request.
+  - `game_id`: The unique identifier for the game, as a `String.t()`.
+  - `api_key`: The API key used for authorization, as a `String.t()`.
+  - `opts`: Optional parameters provided as a keyword list. Supports `:fantasy` as a boolean to indicate whether to include fantasy markets.
+
+  ## Returns
+
+  - `{:ok, PropOddsAPI.Model.Markets.t()}`: On success, returns the market information.
+  - `{:ok, PropOddsAPI.Model.HttpValidationError.t()}`: If there's a validation error with the HTTP request.
+  - `{:error, Tesla.Env.t()}`: On failure, returns the error within the Tesla environment.
+  """
   @spec get_markets(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
           {:ok, PropOddsAPI.Model.Markets.t()}
           | {:ok, PropOddsAPI.Model.HttpValidationError.t()}
