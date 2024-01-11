@@ -18,7 +18,7 @@ your list of dependencies in `mix.exs`:
 
 ```elixir
 def deps do
-  [{:prop_odds_api, "~> 0.0.1"}]
+  [{:prop_odds_api, "~> 0.0.2"}]
 end
 ```
 
@@ -31,7 +31,7 @@ You can override the URL of your server (e.g. if you have a separate development
 configuration files).
 
 ```elixir
-config :prop_odds_api, base_url: "http://localhost"
+config :prop_odds_api, base_url: System.get_env("PROP_ODDS_API_BASE_URI")
 ```
 
 Multiple clients for the same API with different URLs can be created passing different `base_url`s when calling
