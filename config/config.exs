@@ -7,7 +7,9 @@
 # General application configuration
 import Config
 
-config :prop_odds_api, base_url: "http://localhost"
+config :prop_odds_api, base_url: System.get_env("PROP_ODDS_API_BASE_URI")
+
+config :prop_odds_api, api_key: System.get_env("PROP_ODDS_API_KEY")
 
 # Import environment specific config. This must remain at the bottom
 # of this file so it overrides the configuration defined above.
