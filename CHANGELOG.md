@@ -6,10 +6,8 @@
 ### Chores
 
 * document api functions properly
-
-### Features
-
-* 
+* add tests for usage, games, markets
+* fix config
 
 <a name="v0.0.1"></a>
 ## v0.0.1
